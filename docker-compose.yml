@@ -1,0 +1,26 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+    volumes:
+      - ./data/qdrant:/qdrant/storage
+    restart: unless-stopped
+
+  lakequery:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+      - "7860:7860"
+    environment:
+      - LQ_QDRANT_URL=http://qdrant:6333
+      - LQ_LLM_API_KEY=${LQ_LLM_API_KEY:-}
+      - LQ_LLM_BASE_URL=${LQ_LLM_BASE_URL:-https://ark.cn-beijing.volces.com/api/v3}
+      - LQ_LLM_MODEL=${LQ_LLM_MODEL:-ep-m-20251204150216-qnc57}
+      - LQ_HMS_HOST=${LQ_HMS_HOST:-}
+      - LQ_HMS_PORT=${LQ_HMS_PORT:-10000}
+    depends_on:
+      - qdrant
+    restart: unless-stopped

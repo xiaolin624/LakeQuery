@@ -1,0 +1,52 @@
+[
+  {
+    "catalog": "default",
+    "database": "trade_dwd",
+    "table_name": "dwd_order_detail",
+    "columns": [
+      {"name": "order_id", "data_type": "BIGINT", "comment": "订单ID"},
+      {"name": "user_id", "data_type": "BIGINT", "comment": "用户ID"},
+      {"name": "product_id", "data_type": "BIGINT", "comment": "商品ID"},
+      {"name": "amount", "data_type": "DOUBLE", "comment": "订单金额"},
+      {"name": "status", "data_type": "STRING", "comment": "订单状态"},
+      {"name": "created_at", "data_type": "TIMESTAMP", "comment": "下单时间"},
+      {"name": "dt", "data_type": "STRING", "comment": "日期分区", "is_partition_key": true}
+    ],
+    "partition_keys": ["dt"],
+    "comment": "订单明细宽表",
+    "storage_format": "Parquet",
+    "location": "s3://warehouse/trade_dwd/dwd_order_detail"
+  },
+  {
+    "catalog": "default",
+    "database": "trade_dwd",
+    "table_name": "dim_user",
+    "columns": [
+      {"name": "user_id", "data_type": "BIGINT", "comment": "用户ID"},
+      {"name": "username", "data_type": "STRING", "comment": "用户名"},
+      {"name": "gender", "data_type": "STRING", "comment": "性别"},
+      {"name": "province", "data_type": "STRING", "comment": "省份"},
+      {"name": "register_date", "data_type": "DATE", "comment": "注册日期"}
+    ],
+    "partition_keys": [],
+    "comment": "用户维度表",
+    "storage_format": "ORC",
+    "location": "s3://warehouse/trade_dwd/dim_user"
+  },
+  {
+    "catalog": "default",
+    "database": "trade_dwd",
+    "table_name": "dim_product",
+    "columns": [
+      {"name": "product_id", "data_type": "BIGINT", "comment": "商品ID"},
+      {"name": "product_name", "data_type": "STRING", "comment": "商品名称"},
+      {"name": "category", "data_type": "STRING", "comment": "商品类目"},
+      {"name": "price", "data_type": "DOUBLE", "comment": "商品单价"},
+      {"name": "brand", "data_type": "STRING", "comment": "品牌"}
+    ],
+    "partition_keys": [],
+    "comment": "商品维度表",
+    "storage_format": "ORC",
+    "location": "s3://warehouse/trade_dwd/dim_product"
+  }
+]
