@@ -45,33 +45,8 @@
 
 ## 🏗️ 技术栈全景图
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        前端展示层                            │
-│  Next.js 16 · React 19 · TypeScript 5 · Tailwind CSS 4     │
-│  shadcn/ui · Zustand 5 (持久化) · Axios · Sonner           │
-├─────────────────────────────────────────────────────────────┤
-│                        API 网关层                            │
-│  FastAPI 0.135 · Uvicorn · Pydantic v2 · async/await       │
-├─────────────────────────────────────────────────────────────┤
-│                     Agent 推理层                             │
-│  LangGraph 1.1 状态机 · Instructor 1.15 结构化输出          │
-│  OpenAI 兼容 API (火山方舟 DeepSeek/Qwen)                   │
-├─────────────────────────────────────────────────────────────┤
-│                   SQL 处理与安全层                            │
-│  sqlglot 30.4 (AST 解析+转译) · DuckDB 1.5 (沙盒验证)      │
-├─────────────────────────────────────────────────────────────┤
-│                     RAG 检索层                               │
-│  Qdrant 1.17 向量库 · sentence-transformers (BGE-large-zh)  │
-├─────────────────────────────────────────────────────────────┤
-│                    数据湖接入层                               │
-│  PyHive 0.7 (HMS Thrift) · PyIceberg 0.11 (REST Catalog)   │
-│  thrift-sasl · pure-sasl · HDFS/S3 存储                     │
-├─────────────────────────────────────────────────────────────┤
-│                      基础设施                                │
-│  Docker · Docker Compose · pytest (85 tests) · GitHub CI    │
-└─────────────────────────────────────────────────────────────┘
-```
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/c4cf22e8-a466-4983-a06f-f3d0c85eeec3" />
+
 
 ---
 
