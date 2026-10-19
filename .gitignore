@@ -35,3 +35,10 @@ INTERVIEW_PREP_SECRET.md
 # 前端构建产物（如嵌套在 monorepo 中）
 lakequery-web/node_modules/
 lakequery-web/.next/
+
+# 上游参考源码（spring-ai-alibaba/dataagent 原样下载，非本项目代码，不入库）
+dataagent/
+
+# 本地面试材料
+resume_page_1.txt
+面试稿.md
